@@ -13,6 +13,7 @@ import dubpic from "../images/dublin.jpg";
 import me from "../images/jorlogo.png";
 import pic from "../images/pic.jpg";
 import pro from "../images/projectlogo.png";
+import about from "../images/about.png";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -25,44 +26,41 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className="bg-white px-0 ">
-        <section className=" min-h-screen  ">
-          <nav className="py-2 px-6  bg-black flex justify-between leading-4 ">
-          <Image
-                    alt=""
-                    src={me}
-                    className="rounded-full w-32  animate-pulse
+        <section className=" min-h-screen   ">
+          <nav className="py-2 px-6  bg-slate-700 flex justify-between leading-4 
+          border border-white border-t-0 border-l-0 border-r-0 border-b-1 rounded-b-lg
+          ">
+            <Image
+              alt=""
+              src={me}
+              className="rounded-full w-24  
                   
                   "
-                  ></Image>
-           
-            
-            <ul className="flex items-center gap-8">
-              <li className="bg-black">
+            ></Image>
+
+            <ul className="flex items-center  gap-8">
+              <li className="bg-black rounded-lg">
                 <div class="max-w-7xl mx-auto">
-                  <div class="relative group">
-                    <div class="absolute -inset-1 bg-gradient-to-r from-purple-600 to-pink-600 rounded-lg cursor-pointer blur opacity-25 group-hover:opacity-100 transition duration-1000 group-hover:duration-200"></div>
+                  <div class="relative group border rounded-lg">
+                    <div class="absolute  -inset-1 bg-gradient-to-r from-purple-600 to-pink-600 rounded-lg cursor-pointer blur opacity-25 group-hover:opacity-100 transition duration-1000 group-hover:duration-200"></div>
 
                     <div class="relative w-23 px-10 py-6 bg-black ring-1 ring-gray-900/5 rounded-lg leading-none flex items-top justify-center space-x-6">
                       <h1 className="text-white group-hover:text-purple-200 transition cursor-pointer duration-300">
                         <a href="https://www.linkedin.com/in/james-jamie-o-reilly-6b9a45207/">
-
-                        
-                        LinkedIn
+                          LinkedIn
                         </a>
                       </h1>
                     </div>
                   </div>
                 </div>
               </li>
-              <li className="bg-black">
+              <li className="bg-black rounded-lg">
                 <div class="max-w-7xl mx-auto">
                   <div class="relative group">
                     <div class="absolute -inset-1 bg-gradient-to-r from-purple-600 to-pink-600 rounded-lg blur opacity-25 group-hover:opacity-100 transition duration-1000 group-hover:duration-200"></div>
-                    <div class="relative w-23 px-10 py-6 bg-black ring-1 cursor-pointer ring-gray-900/5 rounded-lg leading-none flex items-top justify-center space-x-6">
+                    <div class="relative w-23 px-10 py-6 border bg-black ring-1 cursor-pointer ring-gray-900/5 rounded-lg leading-none flex items-top justify-center space-x-6">
                       <h1 className="text-white group-hover:text-purple-200 transition cursor-pointer duration-300 ">
-                      <a href="https://github.com/JayOReilly">
-                        GitHub
-                        </a>
+                        <a href="https://github.com/JayOReilly">GitHub</a>
                       </h1>
                     </div>
                   </div>
@@ -74,52 +72,54 @@ export default function Home() {
 
           {/*---------------------End Of Portofolio Section---------------------------*/}
           <div
-            className="text-center relative 
+            className="text-center  mt-0
 
           
           
           
-          bg-black h-screen "
+          bg-black h-full resize-y rounded-md "
           >
             <div
-              className="flex items-center justify-center
+              className="flex items-center justify-center 
             
             
             
             
-            bg-black"
+              bg-white"
             >
               <div
-                className=" w-2/3 mt-8 rounded-lg text-white 
-               bg-black"
+                className=" w-5/6 mb-0 mt-8  text-white border border-white border-t-0 border-l-0 border-r-0 border-b-2 rounded-lg
+                 bg-slate-700"
               >
                 <div className="flex items-center justify-center mt-4 mb-4 pt-0 flex-col">
                   <Image
                     alt=""
                     src={pic}
-                    className="rounded-full w-64 filter saturate-200
+                    className="rounded-full w-64 filter saturate-200 border-2 border-white
                   
                   "
                   ></Image>
-                 
-                  <h1 className="font-semibold mt-4 text-3xl">A little about me .. </h1>
-                  <div className=" grid grid-cols-2 gap-10 items-start">
-                  <h1 className="text-2xl  font-semibold text-transparent  text-1xl bg-clip-text  bg-gradient-to-r from-purple-400 to-pink-600  mt-6">
-                 <div className=" items-start">
-                  ▷ Bsc Computer Science - 2022<br/>
-                  ▷ Front End Developer        <br/>
-                  ▷ Passion for Design <br/>
-                  ▷ Team player<br/>
-                  ▷ Always learning <br/>
-                  </div>
 
-                  </h1>
-                  <h1 className="text-2xl  font-semibold text-transparent  text-1xl bg-clip-text  bg-gradient-to-r from-purple-400 to-pink-600  mt-6">I am 31 years of age and passionate about design, although late to the web development party
-                   i intend to make up for lost time and continue to further develop my skills.
-                   I have always been a creative type using music production, photography as outlets.
-                   Now i intend to let them creative juices express them selves through slick design.</h1>
-                  </div>
                   
+                  <div className=" grid grid-cols-2 gap-8 divide-x-2 mt-6">
+                  <h1 className="text-md font-semibold  ml-4  bg-clip-text  bg-white  mt-6">
+                    My name is James O'Reilly and I have recently completed a Bsc in Computer Science.
+                    I am now searching for a position in Front End developement & Ux Design.
+                    In my spare time I enjoy going to the Gym, Kickboxing, Football.
+                    </h1>
+                   
+                   <h1  className="text-md font-semibold mr-4 mt-6"> I have been undertaking projects to keep my skills sharpend.
+                    In 2023 i plan to self learn design using Figma and best practices for product design
+                    Since finishing my degree I have worked a period in IT Support and then spent some time In
+                    South Africa Travelling.
+                    <br/>
+                    
+                    
+
+                    </h1>
+                   
+                    
+                  </div>
                 </div>
               </div>
             </div>
@@ -128,25 +128,25 @@ export default function Home() {
           {/*---------------------End Of Container---------------------------*/}
 
           {/*---------------------STart of Skills Container---------------------------*/}
-          <div className="text-white bg-black flex justify-center text-2xl 
-          
-          
-          
-          ">
-            <Image src={pro}
-            className="object-contain h-72 w-96"
+          <div
+            className="text-white py-20  w-5/6 items-center m-auto
+            border border-white border-t-2 border-l-0 border-r-0 border-b-2 rounded-t-lg rounded-b-lg
             
-            >
-
-            </Image>
-            
-            
+            bg-black    "
+          >
+            <div className="text-center ">
+              <h1>Project</h1>
             </div>
+          </div>
 
-          <div class="min-h-screen bg-gradient-to-br  from-black via-black to-black flex flex-col-2 gap-8 justify-center relative overflow-hidden sm:py-10">
-            
-            
-            
+          <div
+            class="min-h-screen  bg-gradient-to-br 
+
+                  border border-white border-t-0 border-l-0 border-r-0 border-b-2 rounded-b-lg
+          
+          
+          bg-black flex flex-col-2 w-5/6 m-auto gap-4 justify-center relative overflow-hidden sm:py-10"
+          >
             <div class="max-w-7xl mt-0 mx-auto ">
               <div class="relative group">
                 <div class="absolute -inset-1 bg-gradient-to-r from-blue-500 to-yellow-600 rounded-lg blur opacity-25 group-hover:opacity-100 transition duration-1000 group-hover:duration-200"></div>
@@ -188,7 +188,11 @@ export default function Home() {
                 <div class="absolute -inset-1 bg-blue-500 rounded-lg blur opacity-25 group-hover:opacity-100 transition duration-1000 group-hover:duration-200"></div>
                 <div class="relative px-16 py-10 bg-black ring-1 ring-gray-900/5 rounded-lg leading-none flex items-top justify-start space-x-6">
                   <div class="space-y-2">
-                    <p class="text-white">4th Year Project - 2022<br/>Android Studio</p>
+                    <p class="text-white">
+                      4th Year Project - 2022
+                      <br />
+                      Android Studio
+                    </p>
 
                     <a
                       href="https://braydoncoyer.dev/blog/tailwind-gradients-how-to-make-a-glowing-gradient-background"
@@ -252,7 +256,7 @@ export default function Home() {
           {/*---------------------Start of Footer---------------------------*/}
 
           <footer
-            class="w-full h-16 bg-black border-t-2 border-white
+            class="w-full h-16 bg-slate-700 border-t-2 border-white
             abosolute left-0 bottom-0
             flex justify-center items-center
             text-white text-2xl
