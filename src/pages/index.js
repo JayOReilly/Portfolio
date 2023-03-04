@@ -1,9 +1,12 @@
 import Head from "next/head";
 import Image from "next/image";
+import React, { useState } from "react";
 import { Inter } from "@next/font/google";
 import styles from "@/styles/Home.module.css";
 import { SiLinkedin } from "react-icons/si";
 import { DiAndroid } from "react-icons/di";
+import { FiGithub } from "react-icons/fi";
+import { CiLinkedin } from "react-icons/Ci";
 import { DiJsBadge } from "react-icons/di";
 import { FaJava } from "react-icons/fa";
 import { FaReact } from "react-icons/fa";
@@ -14,10 +17,30 @@ import me from "../images/jorlogo.png";
 import pic from "../images/pic.jpg";
 import pro from "../images/projectlogo.png";
 import about from "../images/about.png";
+import { ChevronLeft, ChevronRight } from "react-feather";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
+  const slides = [
+    {
+      url: "https://images.unsplash.com/photo-1531297484001-80022131f5a1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2620&q=80",
+    },
+    {
+      url: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2670&q=80",
+    },
+    {
+      url: "https://images.unsplash.com/photo-1661961112951-f2bfd1f253ce?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2672&q=80",
+    },
+
+    {
+      url: "https://images.unsplash.com/photo-1512756290469-ec264b7fbf87?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2253&q=80",
+    },
+    {
+      url: "https://images.unsplash.com/photo-1496181133206-80ce9b88a853?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2671&q=80",
+    },
+  ];
+
   return (
     <>
       <Head>
@@ -27,27 +50,28 @@ export default function Home() {
       </Head>
       <main className="bg-white px-0 ">
         <section className=" min-h-screen   ">
-          <nav className="py-2 px-6  bg-slate-700 flex justify-between leading-4 
-          border border-white border-t-0 border-l-0 border-r-0 border-b-1 rounded-b-lg
-          ">
-            <Image
-              alt=""
-              src={me}
-              className="rounded-full w-24  
-                  
-                  "
-            ></Image>
+          <nav
+            className="py-2 px-6 bg-gradient-to-r from-slate-700 to-black  flex justify-between leading-7 
+          border border-black border-t-0 border-l-0 border-r-0 border-b-1 
+          "
+          >
+            <ul className="border rounded-lg p-3">
+              <h1 className=" font-medium text-red-500 text-2xl">
+                James O'Reilly
+              </h1>
+              <p className="font-medium text-red-500">Front End Devloper</p>
+            </ul>
 
             <ul className="flex items-center  gap-8">
               <li className="bg-black rounded-lg">
                 <div class="max-w-7xl mx-auto">
                   <div class="relative group border rounded-lg">
-                    <div class="absolute  -inset-1 bg-gradient-to-r from-purple-600 to-pink-600 rounded-lg cursor-pointer blur opacity-25 group-hover:opacity-100 transition duration-1000 group-hover:duration-200"></div>
+                    <div class="absolute  -inset-1 bg-gradient-to-r from-purple-600 to-pink-600 rounded-lg cursor-pointer blur opacity-10 group-hover:opacity-100 transition duration-1000 group-hover:duration-200"></div>
 
-                    <div class="relative w-23 px-10 py-6 bg-black ring-1 ring-gray-900/5 rounded-lg leading-none flex items-top justify-center space-x-6">
-                      <h1 className="text-white group-hover:text-purple-200 transition cursor-pointer duration-300">
+                    <div class="relative hover:animate-pulse w-23 px-10 py-4 bg-black ring-1 ring-gray-900/5 rounded-lg leading-none flex items-top justify-center space-x-6">
+                      <h1 className="text-white text-2xl group-hover:text-purple-200 transition cursor-pointer duration-300">
                         <a href="https://www.linkedin.com/in/james-jamie-o-reilly-6b9a45207/">
-                          LinkedIn
+                          <CiLinkedin />
                         </a>
                       </h1>
                     </div>
@@ -58,9 +82,11 @@ export default function Home() {
                 <div class="max-w-7xl mx-auto">
                   <div class="relative group">
                     <div class="absolute -inset-1 bg-gradient-to-r from-purple-600 to-pink-600 rounded-lg blur opacity-25 group-hover:opacity-100 transition duration-1000 group-hover:duration-200"></div>
-                    <div class="relative w-23 px-10 py-6 border bg-black ring-1 cursor-pointer ring-gray-900/5 rounded-lg leading-none flex items-top justify-center space-x-6">
-                      <h1 className="text-white group-hover:text-purple-200 transition cursor-pointer duration-300 ">
-                        <a href="https://github.com/JayOReilly">GitHub</a>
+                    <div class="relative hover:animate-pulse w-23 px-10 py-4 border bg-black ring-1 cursor-pointer ring-gray-900/5 rounded-lg leading-none flex items-top justify-center space-x-6">
+                      <h1 className="text-white text-2xl group-hover:text-purple-200 transition cursor-pointer duration-300 ">
+                        <a href="https://github.com/JayOReilly">
+                          <FiGithub />
+                        </a>
                       </h1>
                     </div>
                   </div>
@@ -72,7 +98,7 @@ export default function Home() {
 
           {/*---------------------End Of Portofolio Section---------------------------*/}
           <div
-            className="text-center  mt-0
+            className="text-center  mt-0 
 
           
           
@@ -80,7 +106,7 @@ export default function Home() {
           bg-black h-full resize-y rounded-md "
           >
             <div
-              className="flex items-center justify-center 
+              className="flex  
             
             
             
@@ -88,37 +114,41 @@ export default function Home() {
               bg-white"
             >
               <div
-                className=" w-5/6 mb-0 mt-8  text-white border border-white border-t-0 border-l-0 border-r-0 border-b-2 rounded-lg
-                 bg-slate-700"
+                className=" w-full   text-white border border-white border-t-0 border-l-0 border-r-0 border-b-2 rounded-lg
+                 
+                pattern-cross pattern-slate-700 pattern-bg-white 
+                pattern-size-8 pattern-opacity-100 grid place-items-center
+                py-10
+                 
+                 
+                 "
               >
-                <div className="flex items-center justify-center mt-4 mb-4 pt-0 flex-col">
-                  <Image
-                    alt=""
-                    src={pic}
-                    className="rounded-full w-64 filter saturate-200 border-2 border-white
-                  
-                  "
-                  ></Image>
-
-                  
-                  <div className=" grid grid-cols-2 gap-8 divide-x-2 mt-6">
-                  <h1 className="text-md font-semibold  ml-4  bg-clip-text  bg-white  mt-6">
-                    My name is James O'Reilly and I have recently completed a Bsc in Computer Science.
-                    I am now searching for a position in Front End developement & Ux Design.
-                    In my spare time I enjoy going to the Gym, Kickboxing, Football.
-                    </h1>
-                   
-                   <h1  className="text-md font-semibold mr-4 mt-6"> I have been undertaking projects to keep my skills sharpend.
-                    In 2023 i plan to self learn design using Figma and best practices for product design
-                    Since finishing my degree I have worked a period in IT Support and then spent some time In
-                    South Africa Travelling.
-                    <br/>
-                    
-                    
-
-                    </h1>
-                   
-                    
+                <div className="bg-gray-300 h-full w-2/4 rounded-md drop-shadow-2xl outline-dotted border -lg border-black">
+                  <div className="flex justify-center items-center leading-none">
+                    <Image
+                      alt="ME"
+                      src={pic}
+                      className="h-56 w-56 rounded-md shadow-2xl mt-6 transform
+                    -translate-y-10
+                    hover:-translate-y-4 transition duration-700"
+                    ></Image>
+                  </div>
+                  <div className="p-3">
+                    <h1 className="text-xl text-black">About Me</h1>
+                    <p className="block mb-1 font-bold text-left text-black">
+                      My name is James O'Reilly and I have recently completed a
+                      Bsc in Computer Science. I am now searching for a position
+                      in Front End developement & Ux Design. In my spare time I
+                      enjoy going to the Gym, Kickboxing, Football.
+                    </p>
+                    <br />
+                    <p className="block mb-1 font-bold text-left text-black">
+                      I have been undertaking projects to keep my skills
+                      sharpend. In 2023 i plan to self learn design using Figma
+                      and best practices for product design Since finishing my
+                      degree I have worked a period in IT Support and then spent
+                      some time In South Africa Travelling.
+                    </p>
                   </div>
                 </div>
               </div>
@@ -129,82 +159,21 @@ export default function Home() {
 
           {/*---------------------STart of Skills Container---------------------------*/}
           <div
-            className="text-white py-20  w-5/6 items-center m-auto
+            className="text-white py-16  w-full items-center m-auto
             border border-white border-t-2 border-l-0 border-r-0 border-b-2 rounded-t-lg rounded-b-lg
             
-            bg-black    "
-          >
-            <div className="text-center ">
-              <h1>Project</h1>
-            </div>
-          </div>
+            bg-slate-700    "
+          ></div>
 
           <div
-            class="min-h-screen  bg-gradient-to-br 
+            class="min-h-auto  bg-gradient-to-br 
 
                   border border-white border-t-0 border-l-0 border-r-0 border-b-2 rounded-b-lg
           
           
-          bg-black flex flex-col-2 w-5/6 m-auto gap-4 justify-center relative overflow-hidden sm:py-10"
+          bg-slate-700 flex flex-col-2 w-5/6 m-auto gap-4 justify-center relative overflow-hidden sm:py-10"
           >
-            <div class="max-w-7xl mt-0 mx-auto ">
-              <div class="relative group">
-                <div class="absolute -inset-1 bg-gradient-to-r from-blue-500 to-yellow-600 rounded-lg blur opacity-25 group-hover:opacity-100 transition duration-1000 group-hover:duration-200"></div>
-                <div class="relative px-16 py-10 bg-black ring-1 ring-gray-900/5 rounded-lg leading-none flex items-top justify-start space-x-6">
-                  <div class="space-y-2">
-                    <p class="text-white">Live Weather App - Api Fetch</p>
-
-                    <a
-                      href="weatherapi"
-                      class="block text-indigo-400 group-hover:text-purple-800 transition duration-200"
-                      target="_blank"
-                    >
-                      Project →
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="max-w-7xl mt-0 mx-auto">
-              <div class="relative group">
-                <div class="absolute -inset-1 bg-blue-500 rounded-lg blur opacity-25 group-hover:opacity-100 transition duration-1000 group-hover:duration-200"></div>
-                <div class="relative px-24 py-10 bg-black ring-1 ring-gray-900/5 rounded-lg leading-none flex items-top justify-start space-x-6">
-                  <div class="space-y-2">
-                    <p class="text-white">Chat Gpt Integration</p>
-
-                    <a
-                      href="https://braydoncoyer.dev/blog/tailwind-gradients-how-to-make-a-glowing-gradient-background"
-                      class="block text-indigo-400 group-hover:text-purple-800 transition duration-200"
-                      target="_blank"
-                    >
-                      Project →
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="max-w-7xl mt-0 mx-auto">
-              <div class="relative group">
-                <div class="absolute -inset-1 bg-blue-500 rounded-lg blur opacity-25 group-hover:opacity-100 transition duration-1000 group-hover:duration-200"></div>
-                <div class="relative px-16 py-10 bg-black ring-1 ring-gray-900/5 rounded-lg leading-none flex items-top justify-start space-x-6">
-                  <div class="space-y-2">
-                    <p class="text-white">
-                      4th Year Project - 2022
-                      <br />
-                      Android Studio
-                    </p>
-
-                    <a
-                      href="https://braydoncoyer.dev/blog/tailwind-gradients-how-to-make-a-glowing-gradient-background"
-                      class="block text-indigo-400 group-hover:text-purple-800 transition duration-200"
-                      target="_blank"
-                    >
-                      Project →
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>
+            <div className="overflow-hidden relative"></div>
           </div>
 
           {/*---------------------Start of Container with Icons---------------------------*/}
@@ -213,47 +182,85 @@ export default function Home() {
 
           {/*---------------------Start of Bottom Container ---------------------------*/}
 
-          <div
-            className="text-center bg-black h-96 p-20
-            text-white mt-0 flex flex-col
-          
-          "
-          >
-            <div className="grid grid-cols-2 gap-6 ">
-              <div className="flex justify-center m-2 border rounded-lg  text-white">
-                <h3 className="text-2xl  px-4">Html</h3>
-
-                <AiFillHtml5 className="text-3xl " />
-              </div>
-
-              <div className="flex justify-center m-2 border rounded-lg  text-white">
-                <h3 className="text-2xl px-4">JAVA</h3>
-
-                <FaJava className="text-3xl  " />
-              </div>
-
-              <div className="flex justify-center m-2 border rounded-lg  text-white">
-                <h3 className="text-2xl px-4">Javascript</h3>
-
-                <DiJsBadge className="text-3xl " />
-              </div>
-
-              <div className="flex justify-center m-2 border rounded-lg  text-white">
-                <h3 className="text-2xl px-4  ">Tailwind CSS</h3>
-
-                <SiTailwindcss className="text-3xl mr-0 " />
-              </div>
-
-              <div className="flex justify-center m-2 border rounded-lg  text-white">
-                <h3 className="text-2xl px-4  ">React.js</h3>
-
-                <FaReact className="text-3xl mr-0 " />
-              </div>
-            </div>
+          <div className="  max-w-[1400px] h-[780px]  m-auto py-16 px-4 relative">
+            <h1 className="text-center mb-2 text-3xl">
+              Projects
+            </h1>
+            <div
+              style={{ backgroundImage: `url(${slides[0].url})` }}
+              className="w-full h-full 
+              rounded-2xl bg-center bg-cover duration-500"
+            ></div>
           </div>
           {/*---------------------End of Bottom Container ---------------------------*/}
 
           {/*---------------------Start of Footer---------------------------*/}
+
+          <div
+            className="text-center bg-slate-700 h-auto p-20
+            text-white mt-0 flex-row
+          
+          "
+          >
+            <div class="py-8 lg:py-16 px-4 mx-auto w-screen-lg">
+              <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-center text-white dark:text-white">
+                Contact Me
+              </h2>
+              <p class="mb-8 lg:mb-16 font-light text-center text-gray-500 dark:text-gray-400 sm:text-xl"></p>
+              <form action="#" class="space-y-8">
+                <div>
+                  <label
+                    for="email"
+                    class="block mb-2 text-sm font-medium text-white dark:text-gray-300"
+                  >
+                    Your email
+                  </label>
+                  <input
+                    type="email"
+                    id="email"
+                    class="shadow-sm bg-gray-50 border border-gray-300 text-white text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:shadow-sm-light"
+                    placeholder="name@flowbite.com"
+                    required
+                  />
+                </div>
+                <div>
+                  <label
+                    for="subject"
+                    class="block mb-2 text-sm font-medium text-white dark:text-gray-300"
+                  >
+                    Subject
+                  </label>
+                  <input
+                    type="text"
+                    id="subject"
+                    class="block p-3 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 shadow-sm focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:shadow-sm-light"
+                    placeholder="Let us know how we can help you"
+                    required
+                  />
+                </div>
+                <div class="sm:col-span-2">
+                  <label
+                    for="message"
+                    class="block mb-2 text-sm font-medium text-white dark:text-gray-400"
+                  >
+                    Your message
+                  </label>
+                  <textarea
+                    id="message"
+                    rows="6"
+                    class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg shadow-sm border border-gray-300 focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+                    placeholder="Leave a comment..."
+                  ></textarea>
+                </div>
+                <button
+                  type="submit"
+                  class="py-3 px-5 text-sm font-medium text-center text-white rounded-lg bg-primary-700 sm:w-fit hover:bg-primary-800 focus:ring-4 focus:outline-none focus:ring-primary-300 dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"
+                >
+                  Send message
+                </button>
+              </form>
+            </div>
+          </div>
 
           <footer
             class="w-full h-16 bg-slate-700 border-t-2 border-white
