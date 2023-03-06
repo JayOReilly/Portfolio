@@ -5,12 +5,15 @@ import { Inter } from "@next/font/google";
 import styles from "@/styles/Home.module.css";
 import { SiLinkedin } from "react-icons/si";
 import { DiAndroid } from "react-icons/di";
+import { SiJavascript } from "react-icons/si";
 import { FiGithub } from "react-icons/fi";
 import { CiLinkedin } from "react-icons/Ci";
 import { DiJsBadge } from "react-icons/di";
 import { FaJava } from "react-icons/fa";
 import { FaReact } from "react-icons/fa";
-import { SiTailwindcss } from "react-icons/si";
+import { BsFiletypeCss } from "react-icons/bs";
+import { SiTailwindcss, SiCsswizardry } from "react-icons/si";
+import { TbBrandNextjs } from "react-icons/tb";
 import { AiFillHtml5 } from "react-icons/ai";
 import dubpic from "../images/dublin.jpg";
 import me from "../images/jorlogo.png";
@@ -18,6 +21,7 @@ import pic from "../images/pic.jpg";
 import pro from "../images/projectlogo.png";
 import about from "../images/about.png";
 import { BsChevronLeft, BsChevronRight } from "react-icons/bs";
+import Typewriter from "typewriter-effect";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -41,17 +45,19 @@ export default function Home() {
     },
   ];
 
-  const [currentIndex, setCurrentIndex] = useState(0)
+  const [currentIndex, setCurrentIndex] = useState(0);
   const prevSlide = () => {
     const isFirstSlide = currentIndex === 0;
-    const newIndex = isFirstSlide ? slides.length -1 : currentIndex -1;
+    const newIndex = isFirstSlide ? slides.length - 1 : currentIndex - 1;
     setCurrentIndex(newIndex);
-  }
+  };
   const nextSlide = () => {
-    const isLastSlide = currentIndex === slides.length -1;
+    const isLastSlide = currentIndex === slides.length - 1;
     const newIndex = isLastSlide ? 0 : currentIndex + 1;
     setCurrentIndex(newIndex);
   };
+
+ 
 
   return (
     <>
@@ -67,11 +73,35 @@ export default function Home() {
           border border-black border-t-0 border-l-0 border-r-0 border-b-1 
           "
           >
-            <ul className="border rounded-lg p-3">
-              <h1 className=" font-medium text-red-500 text-2xl">
-                James O'Reilly
-              </h1>
-              <p className="font-medium text-red-500">Front End Devloper</p>
+            <ul className=" p-3 font-medium text-gray-400 text-2xl">
+              <h1 className="text-white">James O'Reilly</h1>
+              
+              <Typewriter 
+                onInit={(typewriter) => {
+                 
+                 
+                 
+                 typewriter
+
+                  
+                    .typeString("Front End Developer" )
+                    
+                    .callFunction(() => {
+                      console.log("String typed out!");
+                    })
+                   
+                    
+                    .pauseFor(3500)
+                    .deleteAll()
+                    
+                    .callFunction(() => {
+                      console.log("All strings were deleted");
+                    })
+                    .start();
+                }}
+              />
+
+            
             </ul>
 
             <ul className="flex items-center  gap-8">
@@ -109,6 +139,7 @@ export default function Home() {
           {/*---------------------End of Nav Bar---------------------------*/}
 
           {/*---------------------End Of Portofolio Section---------------------------*/}
+
           <div
             className="text-center  mt-0 
 
@@ -117,34 +148,41 @@ export default function Home() {
           
           bg-black h-full resize-y rounded-md "
           >
-            <div
-              className="flex  
-            
-            
-            
-            
-              bg-white"
-            >
+            <div className=" bg-gray-300">
+              {" "}
+              <Image
+                alt="ME"
+                src={dubpic}
+                className="w-full h-64 blur-lg saturate-200 contrast-200
+            hue-rotate-30 brightness-100
+            "
+              ></Image>
               <div
-                className=" w-full   text-white border border-white border-t-0 border-l-0 border-r-0 border-b-2 rounded-lg
+                className=" w-full   text-white border-lg border-white 
+                border-t-0 border-l-0 border-r-0 border-b-0 rounded-lg
                  
                  grid place-items-center
-                py-10
+                py-2
+                -translate-y-1/4
                  
                  
                  "
               >
-                <div className="pattern-cross pattern-slate-700 pattern-bg-white 
-                pattern-size-8 pattern-opacity-100
+                <div
+                  className="pattern-cross pattern-slate-700
+                
+                pattern-bg-white 
+                pattern-size-8 pattern-opacity-100 
                 
                 
-                h-full w-2/4 rounded-md drop-shadow-2xl outline-dotted border -lg border-black">
+                h-full w-2/4 rounded-md drop-shadow-2xl outline-solid border-4 border-gray-500"
+                >
                   <div className="flex justify-center items-center leading-none">
                     <Image
                       alt="ME"
                       src={pic}
                       className="h-56 w-56 rounded-md shadow-2xl mt-6 transform
-                    -translate-y-10
+                    -translate-y-10 border-4 border-gray-500
                     hover:-translate-y-4 transition duration-700"
                     ></Image>
                   </div>
@@ -174,33 +212,35 @@ export default function Home() {
 
           {/*---------------------STart of Skills Container---------------------------*/}
           <div
-            className="text-white py-16  w-full items-center m-auto
-            border border-white border-t-2 border-l-0 border-r-0 border-b-2 rounded-t-lg rounded-b-lg
+            className="bg-gradient-to-r from-slate-700 to-black py-8  w-full  m-auto  
             
-            bg-slate-700    "
+           
+            
+            text-gray-300 text-center  "
           >
-            <ul className="flex-rows-2  ">
-              <li>
-                <FaJava />
-              </li>
-              <li>
-                <FaReact />
-              </li>
-              <li>
-                <FaJava />
-              </li>
-              <li>
-                <FaJava />
-              </li>
-              <li>
-                <FaJava />
-              </li>
-            </ul>
+            <h1 className="mb-4 text-3xl font-bold ">Skills</h1>
 
-
+            <div className="grid grid-cols-3 text-xl">
+              <div className=" flex items-center underline  mb-4 justify-center">
+                <FaJava className="m-2" /> Java
+              </div>
+              <div className=" flex items-center underline justify-center">
+                <FaReact className="m-2" /> React.js
+              </div>
+              <div className=" flex items-center underline justify-center">
+                <SiTailwindcss className="m-2" /> Tailwind Css
+              </div>
+              <div className=" flex items-center underline justify-center">
+                <AiFillHtml5 className="m-2" /> Html
+              </div>
+              <div className=" flex items-center underline justify-center">
+                <SiJavascript className="m-2" /> Javascript
+              </div>
+              <div className=" flex items-center underline justify-center">
+                <TbBrandNextjs className="m-2" /> Next.js
+              </div>
+            </div>
           </div>
-
-         
 
           {/*---------------------Start of Container with Icons---------------------------*/}
 
@@ -209,30 +249,29 @@ export default function Home() {
           {/*---------------------Start of Bottom Container ---------------------------*/}
 
           <div className="  max-w-[1400px] h-[780px]  m-auto py-16 px-4 relative group">
-            
             <div
               style={{ backgroundImage: `url(${slides[currentIndex].url})` }}
               className="w-full h-full 
               rounded-2xl bg-center bg-cover duration-500 "
-            >
-
-            </div>
+            ></div>
             {/*Left Arrow */}
-            <div className="hidden group-hover:block absolute top-[50%] -translate-x-0 translate-y-[-50%] 
+            <div
+              className="hidden group-hover:block absolute top-[50%] -translate-x-0 translate-y-[-50%] 
             left-5 text 2xl rounded-full p-2 bg-black/20
             text-white cursor-pointer
-            ">
+            "
+            >
               <BsChevronLeft onClick={prevSlide} size={30} />
             </div>
-             {/*Right Arrow */}
-            <div className="hidden group-hover:block absolute top-[50%] -translate-x-0 translate-y-[-50%] 
+            {/*Right Arrow */}
+            <div
+              className="hidden group-hover:block absolute top-[50%] -translate-x-0 translate-y-[-50%] 
             right-5 text 2xl rounded-full p-2 bg-black/20
             text-white cursor-pointer
-            ">
+            "
+            >
               <BsChevronRight onClick={nextSlide} size={30} />
             </div>
-
-           
           </div>
           {/*---------------------End of Bottom Container ---------------------------*/}
 
