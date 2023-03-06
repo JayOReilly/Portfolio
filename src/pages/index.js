@@ -17,7 +17,7 @@ import me from "../images/jorlogo.png";
 import pic from "../images/pic.jpg";
 import pro from "../images/projectlogo.png";
 import about from "../images/about.png";
-import { ChevronLeft, ChevronRight } from "react-feather";
+import { BsChevronLeft, BsChevronRight } from "react-icons/bs";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -40,6 +40,18 @@ export default function Home() {
       url: "https://images.unsplash.com/photo-1496181133206-80ce9b88a853?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2671&q=80",
     },
   ];
+
+  const [currentIndex, setCurrentIndex] = useState(0)
+  const prevSlide = () => {
+    const isFirstSlide = currentIndex === 0;
+    const newIndex = isFirstSlide ? slides.length -1 : currentIndex -1;
+    setCurrentIndex(newIndex);
+  }
+  const nextSlide = () => {
+    const isLastSlide = currentIndex === slides.length -1;
+    const newIndex = isLastSlide ? 0 : currentIndex + 1;
+    setCurrentIndex(newIndex);
+  };
 
   return (
     <>
@@ -68,7 +80,7 @@ export default function Home() {
                   <div class="relative group border rounded-lg">
                     <div class="absolute  -inset-1 bg-gradient-to-r from-purple-600 to-pink-600 rounded-lg cursor-pointer blur opacity-10 group-hover:opacity-100 transition duration-1000 group-hover:duration-200"></div>
 
-                    <div class="relative hover:animate-pulse w-23 px-10 py-4 bg-black ring-1 ring-gray-900/5 rounded-lg leading-none flex items-top justify-center space-x-6">
+                    <div class="relative  w-23 px-10 py-4 bg-black ring-1 ring-gray-900/5 rounded-lg leading-none flex items-top justify-center space-x-6">
                       <h1 className="text-white text-2xl group-hover:text-purple-200 transition cursor-pointer duration-300">
                         <a href="https://www.linkedin.com/in/james-jamie-o-reilly-6b9a45207/">
                           <CiLinkedin />
@@ -82,7 +94,7 @@ export default function Home() {
                 <div class="max-w-7xl mx-auto">
                   <div class="relative group">
                     <div class="absolute -inset-1 bg-gradient-to-r from-purple-600 to-pink-600 rounded-lg blur opacity-25 group-hover:opacity-100 transition duration-1000 group-hover:duration-200"></div>
-                    <div class="relative hover:animate-pulse w-23 px-10 py-4 border bg-black ring-1 cursor-pointer ring-gray-900/5 rounded-lg leading-none flex items-top justify-center space-x-6">
+                    <div class="relative  w-23 px-10 py-4 border bg-black ring-1 cursor-pointer ring-gray-900/5 rounded-lg leading-none flex items-top justify-center space-x-6">
                       <h1 className="text-white text-2xl group-hover:text-purple-200 transition cursor-pointer duration-300 ">
                         <a href="https://github.com/JayOReilly">
                           <FiGithub />
@@ -116,14 +128,17 @@ export default function Home() {
               <div
                 className=" w-full   text-white border border-white border-t-0 border-l-0 border-r-0 border-b-2 rounded-lg
                  
-                pattern-cross pattern-slate-700 pattern-bg-white 
-                pattern-size-8 pattern-opacity-100 grid place-items-center
+                 grid place-items-center
                 py-10
                  
                  
                  "
               >
-                <div className="bg-gray-300 h-full w-2/4 rounded-md drop-shadow-2xl outline-dotted border -lg border-black">
+                <div className="pattern-cross pattern-slate-700 pattern-bg-white 
+                pattern-size-8 pattern-opacity-100
+                
+                
+                h-full w-2/4 rounded-md drop-shadow-2xl outline-dotted border -lg border-black">
                   <div className="flex justify-center items-center leading-none">
                     <Image
                       alt="ME"
@@ -133,16 +148,16 @@ export default function Home() {
                     hover:-translate-y-4 transition duration-700"
                     ></Image>
                   </div>
-                  <div className="p-3">
-                    <h1 className="text-xl text-black">About Me</h1>
-                    <p className="block mb-1 font-bold text-left text-black">
+                  <div className="p-3 bg-slate-700">
+                    <h1 className="text-xl text-white">About Me</h1>
+                    <p className="block mb-1 font-bold  text-left text-white">
                       My name is James O'Reilly and I have recently completed a
                       Bsc in Computer Science. I am now searching for a position
                       in Front End developement & Ux Design. In my spare time I
                       enjoy going to the Gym, Kickboxing, Football.
                     </p>
                     <br />
-                    <p className="block mb-1 font-bold text-left text-black">
+                    <p className="block mb-1 font-bold text-left text-white">
                       I have been undertaking projects to keep my skills
                       sharpend. In 2023 i plan to self learn design using Figma
                       and best practices for product design Since finishing my
@@ -163,18 +178,29 @@ export default function Home() {
             border border-white border-t-2 border-l-0 border-r-0 border-b-2 rounded-t-lg rounded-b-lg
             
             bg-slate-700    "
-          ></div>
-
-          <div
-            class="min-h-auto  bg-gradient-to-br 
-
-                  border border-white border-t-0 border-l-0 border-r-0 border-b-2 rounded-b-lg
-          
-          
-          bg-slate-700 flex flex-col-2 w-5/6 m-auto gap-4 justify-center relative overflow-hidden sm:py-10"
           >
-            <div className="overflow-hidden relative"></div>
+            <ul className="flex-rows-2  ">
+              <li>
+                <FaJava />
+              </li>
+              <li>
+                <FaReact />
+              </li>
+              <li>
+                <FaJava />
+              </li>
+              <li>
+                <FaJava />
+              </li>
+              <li>
+                <FaJava />
+              </li>
+            </ul>
+
+
           </div>
+
+         
 
           {/*---------------------Start of Container with Icons---------------------------*/}
 
@@ -182,15 +208,31 @@ export default function Home() {
 
           {/*---------------------Start of Bottom Container ---------------------------*/}
 
-          <div className="  max-w-[1400px] h-[780px]  m-auto py-16 px-4 relative">
-            <h1 className="text-center mb-2 text-3xl">
-              Projects
-            </h1>
+          <div className="  max-w-[1400px] h-[780px]  m-auto py-16 px-4 relative group">
+            
             <div
-              style={{ backgroundImage: `url(${slides[0].url})` }}
+              style={{ backgroundImage: `url(${slides[currentIndex].url})` }}
               className="w-full h-full 
-              rounded-2xl bg-center bg-cover duration-500"
-            ></div>
+              rounded-2xl bg-center bg-cover duration-500 "
+            >
+
+            </div>
+            {/*Left Arrow */}
+            <div className="hidden group-hover:block absolute top-[50%] -translate-x-0 translate-y-[-50%] 
+            left-5 text 2xl rounded-full p-2 bg-black/20
+            text-white cursor-pointer
+            ">
+              <BsChevronLeft onClick={prevSlide} size={30} />
+            </div>
+             {/*Right Arrow */}
+            <div className="hidden group-hover:block absolute top-[50%] -translate-x-0 translate-y-[-50%] 
+            right-5 text 2xl rounded-full p-2 bg-black/20
+            text-white cursor-pointer
+            ">
+              <BsChevronRight onClick={nextSlide} size={30} />
+            </div>
+
+           
           </div>
           {/*---------------------End of Bottom Container ---------------------------*/}
 
