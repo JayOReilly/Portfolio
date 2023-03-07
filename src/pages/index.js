@@ -374,13 +374,18 @@ export default function Home() {
           
 
           <footer
-            class="w-full h-16 bg-gradient-to-r from-slate-700 to-black border-t-2 border-white
-            abosolute left-0 bottom-0
-            flex justify-center items-center
-            text-white text-2xl
-            "
+            class="w-full h-20 bg-gradient-to-r from-slate-700 to-black border-t-2 border-white
+            abosolute left-0 bottom-0 
+            flex-rows-3 text-center   
+            text-white 
+            " 
           >
-            Footer Bar
+            <div><h1 className="text-sm">Copyright © James O'Reilly, 2023, All rights reserved.</h1></div>
+            
+            <div><h1 className="text-sm">Built Using React.Js, Next.Js, Tailwind Css</h1></div>
+            
+
+           
           </footer>
           {/*---------------------End Of Footer---------------------------*/}
         </section>
