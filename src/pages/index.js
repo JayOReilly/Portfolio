@@ -1,4 +1,5 @@
 import Head from "next/head";
+import {useRef} from 'react';
 import Image from "next/image";
 import React, { useState } from "react";
 import { Inter } from "@next/font/google";
@@ -28,10 +29,13 @@ import {GiHighKick} from "react-icons/gi"
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
+
+  
+
   const slides = [
     
     {
-      url: "https://www.pngitem.com/pimgs/m/524-5249023_js-javascript-logo-hd-png-download.png"
+      url: "https://www.freepnglogos.com/uploads/javascript-png/js-logo-png-5.png"
     },
    
     {
@@ -46,7 +50,7 @@ export default function Home() {
     },
 
     {
-      url: "https://assets.stickpng.com/images/5847f5bdcef1014c0b5e489c.png"
+      url: "https://assets.stickpng.com/thumbs/5847f5bdcef1014c0b5e489c.png"
     },
     {
       url: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/Nextjs-logo.svg/1024px-Nextjs-logo.svg.png"
@@ -80,13 +84,7 @@ export default function Home() {
           border border-black border-t-0 border-l-0 border-r-0 border-b-1 
           "
           >
-            <ul className=" grid-rows-1 flex p-2 space-x-2 justify-center  text-white">
-              <li className=" p-2 hover:text-purple-400 cursor-pointer">
-                Hello
-              </li>
-              <li className=" p-2 hover:text-blue-400 cursor-pointer">Hello</li>
-              <li className=" p-2 hover:text-blue-400 cursor-pointer">Hello</li>
-            </ul>
+            
             <ul className=" p-3 font-medium text-gray-400 text-2xl">
               <Typewriter
                 onInit={(typewriter) => {
@@ -151,7 +149,7 @@ export default function Home() {
           
           
           
-          bg-black h-full resize-y rounded-md "
+          bg-black h-full resize-y rounded-md " id="about"
           >
             <div className=" bg-gray-300">
               {" "}
@@ -224,26 +222,35 @@ export default function Home() {
             
             text-gray-300 text-center  "
           >
-            <h1 className="mb-4 text-3xl font-bold ">Hobbies</h1>
+             
+            <h1 className="mb-4 text-3xl font-bold underline ">Github Display</h1>
+           
 
-            <div className="grid grid-cols-3 text-xl">
-              <div className=" flex items-center underline  mb-4 justify-center">
-                <GiHighKick className="m-2" /> Kickboxing
+            <div className="grid grid-cols-3 text-xl ">
+              <div className=" ml-2 items-center   mb-4 justify-center">
+                
+                <div class="repo-card" data-repo="JayOReilly/Portofolio" data-theme="dark-theme"></div> 
+
               </div>
-              <div className=" flex items-center underline justify-center">
-                <FaReact className="m-2" /> React.js
+              <div className="ml-4 items-center  justify-center">
+              <div class="repo-card" data-repo="JayOReilly/StudentHousingApp" data-theme="dark-theme"></div> 
+
               </div>
-              <div className=" flex items-center underline justify-center">
-                <SiTailwindcss className="m-2" /> Tailwind Css
+              <div className="ml-4 mr-4 items-center  justify-center">
+              <div class="repo-card" data-repo="JayOReilly/JenkinsTest" data-theme="dark-theme"></div> 
+
               </div>
-              <div className=" flex items-center underline justify-center">
-                <AiFillHtml5 className="m-2" /> Html
+              <div className=" ml-2 items-center justify-center">
+              <div class="repo-card" data-repo="JayOReilly/Space-three.js" data-theme="dark-theme"></div> 
+
               </div>
-              <div className=" flex items-center underline justify-center">
-                <SiJavascript className="m-2" /> Javascript
+              <div className=" ml-4  items-center  justify-center">
+              <div class="repo-card" data-repo="JayOReilly/Parralax---React-Spring" data-theme="dark-theme"></div> 
+
               </div>
-              <div className=" flex items-center underline justify-center">
-                <TbBrandNextjs className="m-2" /> Next.js
+              <div className=" ml-4 mr-4 items-center  justify-center">
+              <div class="repo-card" data-repo="JayOReilly/BookClub" data-theme="dark-theme"></div> 
+
               </div>
 
             </div>
@@ -257,10 +264,9 @@ export default function Home() {
           {/*---------------------Start of Bottom Container ---------------------------*/}
 
           
-          <div class="repo-card" data-repo="JayOReilly/Portofolio" data-theme="dark-theme"></div> 
          
          
-          <div className="text-center"><h1 className="text-3xl text-slate-700 font-bold">Skills</h1></div>
+          <div className="text-center"><h1 className="text-3xl text-slate-700 mt-8 font-bold">Skills</h1></div>
 
          
           <div className="  max-w-auto h-96  m-auto py-16 px-4 relative group">
