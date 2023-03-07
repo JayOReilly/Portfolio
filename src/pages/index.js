@@ -22,26 +22,34 @@ import pro from "../images/projectlogo.png";
 import about from "../images/about.png";
 import { BsChevronLeft, BsChevronRight } from "react-icons/bs";
 import Typewriter from "typewriter-effect";
+import JavaScript from "../images/js.png";
+import {GiHighKick} from "react-icons/gi"
 
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
   const slides = [
+    
     {
-      url: "https://images.unsplash.com/photo-1531297484001-80022131f5a1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2620&q=80",
+      url: "https://www.pngitem.com/pimgs/m/524-5249023_js-javascript-logo-hd-png-download.png"
+    },
+   
+    {
+      url: "https://res.cloudinary.com/practicaldev/image/fetch/s--y2fF9U3x--/c_imagga_scale,f_auto,fl_progressive,h_900,q_auto,w_1600/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/x8vfaqfibaay30pubk73.jpeg",
+      
     },
     {
-      url: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2670&q=80",
+      url: "https://laravelnews.s3.amazonaws.com/images/tailwindcss-1633184775.jpg",
     },
     {
-      url: "https://images.unsplash.com/photo-1661961112951-f2bfd1f253ce?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2672&q=80",
+      url: "https://1000logos.net/wp-content/uploads/2020/09/Java-Logo.png"
     },
 
     {
-      url: "https://images.unsplash.com/photo-1512756290469-ec264b7fbf87?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2253&q=80",
+      url: "https://assets.stickpng.com/images/5847f5bdcef1014c0b5e489c.png"
     },
     {
-      url: "https://images.unsplash.com/photo-1496181133206-80ce9b88a853?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2671&q=80",
+      url: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/Nextjs-logo.svg/1024px-Nextjs-logo.svg.png"
     },
   ];
 
@@ -54,10 +62,9 @@ export default function Home() {
   const nextSlide = () => {
     const isLastSlide = currentIndex === slides.length - 1;
     const newIndex = isLastSlide ? 0 : currentIndex + 1;
+    
     setCurrentIndex(newIndex);
   };
-
- 
 
   return (
     <>
@@ -73,35 +80,33 @@ export default function Home() {
           border border-black border-t-0 border-l-0 border-r-0 border-b-1 
           "
           >
+            <ul className=" grid-rows-1 flex p-2 space-x-2 justify-center  text-white">
+              <li className=" p-2 hover:text-purple-400 cursor-pointer">
+                Hello
+              </li>
+              <li className=" p-2 hover:text-blue-400 cursor-pointer">Hello</li>
+              <li className=" p-2 hover:text-blue-400 cursor-pointer">Hello</li>
+            </ul>
             <ul className=" p-3 font-medium text-gray-400 text-2xl">
-              <h1 className="text-white">James O'Reilly</h1>
-              
-              <Typewriter 
+              <Typewriter
                 onInit={(typewriter) => {
-                 
-                 
-                 
-                 typewriter
+                  typewriter
 
-                  
-                    .typeString("Front End Developer" )
-                    
+                    .typeString("James O'Reilly | Front End Developer")
+
                     .callFunction(() => {
                       console.log("String typed out!");
                     })
-                   
-                    
+
                     .pauseFor(3500)
                     .deleteAll()
-                    
+
                     .callFunction(() => {
                       console.log("All strings were deleted");
                     })
                     .start();
                 }}
               />
-
-            
             </ul>
 
             <ul className="flex items-center  gap-8">
@@ -203,6 +208,7 @@ export default function Home() {
                       some time In South Africa Travelling.
                     </p>
                   </div>
+                  
                 </div>
               </div>
             </div>
@@ -218,11 +224,11 @@ export default function Home() {
             
             text-gray-300 text-center  "
           >
-            <h1 className="mb-4 text-3xl font-bold ">Skills</h1>
+            <h1 className="mb-4 text-3xl font-bold ">Hobbies</h1>
 
             <div className="grid grid-cols-3 text-xl">
               <div className=" flex items-center underline  mb-4 justify-center">
-                <FaJava className="m-2" /> Java
+                <GiHighKick className="m-2" /> Kickboxing
               </div>
               <div className=" flex items-center underline justify-center">
                 <FaReact className="m-2" /> React.js
@@ -239,7 +245,9 @@ export default function Home() {
               <div className=" flex items-center underline justify-center">
                 <TbBrandNextjs className="m-2" /> Next.js
               </div>
+
             </div>
+
           </div>
 
           {/*---------------------Start of Container with Icons---------------------------*/}
@@ -248,12 +256,22 @@ export default function Home() {
 
           {/*---------------------Start of Bottom Container ---------------------------*/}
 
-          <div className="  max-w-[1400px] h-[780px]  m-auto py-16 px-4 relative group">
+          
+          <div class="repo-card" data-repo="JayOReilly/Portofolio" data-theme="dark-theme"></div> 
+         
+         
+          <div className="text-center"><h1 className="text-3xl text-slate-700 font-bold">Skills</h1></div>
+
+         
+          <div className="  max-w-auto h-96  m-auto py-16 px-4 relative group">
+          
             <div
               style={{ backgroundImage: `url(${slides[currentIndex].url})` }}
               className="w-full h-full 
-              rounded-2xl bg-center bg-cover duration-500 "
-            ></div>
+              rounded-2xl bg-center bg-contain bg-no-repeat duration-500 "
+            >
+              
+            </div>
             {/*Left Arrow */}
             <div
               className="hidden group-hover:block absolute top-[50%] -translate-x-0 translate-y-[-50%] 
@@ -278,7 +296,7 @@ export default function Home() {
           {/*---------------------Start of Footer---------------------------*/}
 
           <div
-            className="text-center bg-slate-700 h-auto p-20
+            className="text-center bg-gradient-to-r from-slate-700 to-black h-auto p-20
             text-white mt-0 flex-row
           
           "
@@ -288,7 +306,7 @@ export default function Home() {
                 Contact Me
               </h2>
               <p class="mb-8 lg:mb-16 font-light text-center text-gray-500 dark:text-gray-400 sm:text-xl"></p>
-              <form action="#" class="space-y-8">
+              <form method="POST" action="https://getform.io/f/16584e33-abc8-4ace-8700-58a2d3bd66c6" class="space-y-8">
                 <div>
                   <label
                     for="email"
@@ -297,28 +315,29 @@ export default function Home() {
                     Your email
                   </label>
                   <input
-                    type="email"
+                    type="email" name="email"
                     id="email"
-                    class="shadow-sm bg-gray-50 border border-gray-300 text-white text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:shadow-sm-light"
-                    placeholder="name@flowbite.com"
+                    class="shadow-sm bg-gray-50 border text-black border-gray-300  text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:shadow-sm-light"
+                    placeholder="name@email.com"
                     required
                   />
                 </div>
                 <div>
                   <label
-                    for="subject"
+                    for="name"
                     class="block mb-2 text-sm font-medium text-white dark:text-gray-300"
                   >
-                    Subject
+                    Name
                   </label>
                   <input
-                    type="text"
-                    id="subject"
+                    type="text" name="name"
+                    id="name"
                     class="block p-3 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 shadow-sm focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:shadow-sm-light"
-                    placeholder="Let us know how we can help you"
+                    placeholder="Name..."
                     required
                   />
                 </div>
+                
                 <div class="sm:col-span-2">
                   <label
                     for="message"
@@ -326,25 +345,30 @@ export default function Home() {
                   >
                     Your message
                   </label>
-                  <textarea
+                  
+                  <textarea 
+                    type="text" name="Message"
                     id="message"
                     rows="6"
                     class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg shadow-sm border border-gray-300 focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
-                    placeholder="Leave a comment..."
+                    placeholder="Leave a message..."
                   ></textarea>
+                  
                 </div>
+                
                 <button
                   type="submit"
-                  class="py-3 px-5 text-sm font-medium text-center text-white rounded-lg bg-primary-700 sm:w-fit hover:bg-primary-800 focus:ring-4 focus:outline-none focus:ring-primary-300 dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"
+                  class="py-3 px-5 border-2 border-white hover:text-gray-900 hover:bg-white text-sm font-medium text-center text-white rounded-lg bg-primary-700 sm:w-fit hover:bg-primary-800 focus:ring-4 focus:outline-none focus:ring-primary-300 dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"
                 >
                   Send message
                 </button>
               </form>
             </div>
           </div>
+          
 
           <footer
-            class="w-full h-16 bg-slate-700 border-t-2 border-white
+            class="w-full h-16 bg-gradient-to-r from-slate-700 to-black border-t-2 border-white
             abosolute left-0 bottom-0
             flex justify-center items-center
             text-white text-2xl
