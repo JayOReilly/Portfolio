@@ -51,6 +51,10 @@ module.exports = {
 
     },
     extend: {
+      fontFamily:{
+        ClimateCrisis: ['Climate Crisis', "cursive"],
+        ShareTekMono: ['Share Tech Mono', 'monospace']
+      },
       zIndex: {
         '-10': '-10',
        }
