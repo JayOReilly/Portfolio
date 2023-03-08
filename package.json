@@ -2,7 +2,7 @@
   "homepage": "https://JayOReilly.github.io/Portfolio",
   "name": "websitecv",
   "version": "0.1.0",
-  "private": true,
+  "private": false,
   "scripts": {
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",

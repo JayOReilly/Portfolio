@@ -81,7 +81,7 @@ export default function Home() {
         <script src="https://tarptaeya.github.io/repo-card/repo-card.js" />
 
       </Head>
-      <main className="bg-white px-0 ">
+      <main className="bg-white px-0 " id="home">
         <section className=" min-h-screen   ">
           <nav
             className="py-2 px-6 bg-gradient-to-r from-slate-700 to-black  flex justify-between leading-7 
